@@ -1,4 +1,4 @@
-package com.munix.utilities.logs;
+package com.munix.utilities;
 
 import android.util.Log;
 
