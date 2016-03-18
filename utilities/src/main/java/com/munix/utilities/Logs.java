@@ -7,13 +7,15 @@ import android.util.Log;
  */
 public class Logs {
 
-    public static void verbose( String text ) {
+    /**
+     * Log verbose extendido
+     *
+     * @param tag
+     * @param text
+     */
+    public static void verbose( String tag, String text ) {
         try {
-            String fullClassName = Thread.currentThread().getStackTrace()[3].getClassName();
-            String className = fullClassName.substring( fullClassName.lastIndexOf( "." ) + 1 );
-            String methodName = Thread.currentThread().getStackTrace()[3].getMethodName();
-            int lineNumber = Thread.currentThread().getStackTrace()[3].getLineNumber();
-            Log.v( className, className + "." + methodName + "():" + lineNumber + ": " + text );
+            Log.v( tag, getFormattedLogLine() + text );
         } catch ( OutOfMemoryError error ) {
             error.printStackTrace();
         } catch ( Exception exception ) {
@@ -21,13 +23,15 @@ public class Logs {
         }
     }
 
-    public static void warn( String text ) {
+    /**
+     * Log warn extendido
+     *
+     * @param tag
+     * @param text
+     */
+    public static void warn( String tag, String text ) {
         try {
-            String fullClassName = Thread.currentThread().getStackTrace()[3].getClassName();
-            String className = fullClassName.substring( fullClassName.lastIndexOf( "." ) + 1 );
-            String methodName = Thread.currentThread().getStackTrace()[3].getMethodName();
-            int lineNumber = Thread.currentThread().getStackTrace()[3].getLineNumber();
-            Log.w( className, className + "." + methodName + "():" + lineNumber + ": " + text );
+            Log.w( tag, getFormattedLogLine() + text );
         } catch ( OutOfMemoryError error ) {
             error.printStackTrace();
         } catch ( Exception exception ) {
@@ -35,17 +39,26 @@ public class Logs {
         }
     }
 
-    public static void error( String text ) {
+    /**
+     * Log error extendido
+     *
+     * @param tag
+     * @param text
+     */
+    public static void error( String tag, String text ) {
         try {
-            String fullClassName = Thread.currentThread().getStackTrace()[3].getClassName();
-            String className = fullClassName.substring( fullClassName.lastIndexOf( "." ) + 1 );
-            String methodName = Thread.currentThread().getStackTrace()[3].getMethodName();
-            int lineNumber = Thread.currentThread().getStackTrace()[3].getLineNumber();
-            Log.w( className, className + "." + methodName + "():" + lineNumber + ": " + text );
+            Log.e( tag, getFormattedLogLine() + text );
         } catch ( OutOfMemoryError error ) {
             error.printStackTrace();
         } catch ( Exception exception ) {
             exception.printStackTrace();
         }
+    }
+
+    private static String getFormattedLogLine() {
+        String className = Threads.getCallerClassName( 5 );
+        String methodName = Threads.getCallerMethodName( 5 );
+        int lineNumber = Threads.getCallerLineNumber( 5 );
+        return className + "." + methodName + "():" + lineNumber + ": ";
     }
 }
