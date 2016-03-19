@@ -1,6 +1,9 @@
 [![](https://jitpack.io/v/munix/AndroidUtilities.svg)](https://jitpack.io/#munix/AndroidUtilities)
 
 
+Docs
+====
+
 [Javadoc](http://munix.github.io/AndroidUtilities)
 
 To get a Git project into your build:
