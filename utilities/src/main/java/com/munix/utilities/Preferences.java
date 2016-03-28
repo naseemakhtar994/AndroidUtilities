@@ -8,65 +8,127 @@ import android.content.SharedPreferences;
  */
 public class Preferences {
 
-    private static SharedPreferences getSharedPreferenceManager( Context mContext ) {
+    public static SharedPreferences getSharedPreferenceManager( Context context ) {
         try {
-            return mContext.getSharedPreferences( mContext.getPackageName() + "_preferences", Context.MODE_WORLD_WRITEABLE );
+            return context.getSharedPreferences( context.getPackageName() + "_preferences", Context.MODE_PRIVATE );
         } catch ( Exception e ) {
             return null;
         }
     }
 
-    public static void writeSharedPreference( Context mContext, String key, String value ) {
+    /**
+     * Elimina una preferencia almacenada en SharedPreferences
+     *
+     * @param context
+     * @param key
+     */
+    public static Boolean deleteSharedPreference( Context context, String key ) {
         try {
-            SharedPreferences settings = getSharedPreferenceManager( mContext );
+            return getSharedPreferenceManager( context ).edit().remove( key ).commit();
+        } catch ( Exception e ) {
+        }
+        return false;
+    }
+
+    /**
+     * Guardar una preferencia
+     *
+     * @param context
+     * @param key
+     * @param value
+     */
+    public static Boolean writeSharedPreference( Context context, String key, String value ) {
+        try {
+            SharedPreferences settings = getSharedPreferenceManager( context );
             SharedPreferences.Editor editor = settings.edit();
             editor.putString( key, value );
-            editor.commit();
+            return editor.commit();
         } catch ( Exception e ) {
         }
+        return false;
     }
 
-    public static void writeSharedPreference( Context mContext, String key, Boolean value ) {
+    /**
+     * Guardar una preferencia
+     *
+     * @param context
+     * @param key
+     * @param value
+     */
+    public static Boolean writeSharedPreference( Context context, String key, Boolean value ) {
         try {
-            SharedPreferences settings = getSharedPreferenceManager( mContext );
+            SharedPreferences settings = getSharedPreferenceManager( context );
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean( key, value );
-            editor.commit();
+            return editor.commit();
         } catch ( Exception e ) {
         }
+        return false;
     }
 
-    public static void writeSharedPreference( Context mContext, String key, long value ) {
+    /**
+     * Guardar una preferencia
+     *
+     * @param context
+     * @param key
+     * @param value
+     */
+    public static Boolean writeSharedPreference( Context context, String key, long value ) {
         try {
-            SharedPreferences settings = getSharedPreferenceManager( mContext );
+            SharedPreferences settings = getSharedPreferenceManager( context );
             SharedPreferences.Editor editor = settings.edit();
             editor.putLong( key, value );
-            editor.commit();
+            return editor.commit();
         } catch ( Exception e ) {
         }
+        return false;
     }
 
-    public static Boolean readSharedPreference( Context mContext, String key, Boolean default_value ) {
+    /**
+     * Lee una preferencia
+     *
+     * @param context
+     * @param key
+     * @param default_value
+     * @return
+     */
+    public static Boolean readSharedPreference( Context context, String key, Boolean default_value ) {
         try {
-            SharedPreferences settings = getSharedPreferenceManager( mContext );
+            SharedPreferences settings = getSharedPreferenceManager( context );
             return settings.getBoolean( key, default_value );
         } catch ( Exception e ) {
             return default_value;
         }
     }
 
-    public static long readSharedPreference( Context mContext, String key, long default_value ) {
+    /**
+     * Lee una preferencia
+     *
+     * @param context
+     * @param key
+     * @param default_value
+     * @return
+     */
+    public static long readSharedPreference( Context context, String key, long default_value ) {
         try {
-            SharedPreferences settings = getSharedPreferenceManager( mContext );
+            SharedPreferences settings = getSharedPreferenceManager( context );
             return settings.getLong( key, default_value );
         } catch ( Exception e ) {
             return default_value;
         }
     }
 
-    public static String readSharedPreference( Context mContext, String key, String default_value ) {
+    /**
+     * Lee una preferencia
+     *
+     * @param context
+     * @param key
+     * @param default_value
+     * @return
+     */
+    public static String readSharedPreference( Context context, String key, String default_value ) {
         try {
-            SharedPreferences settings = getSharedPreferenceManager( mContext );
+            SharedPreferences settings = getSharedPreferenceManager( context );
             return settings.getString( key, default_value );
         } catch ( Exception e ) {
             return default_value;
