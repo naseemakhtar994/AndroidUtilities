@@ -3,6 +3,8 @@ package com.munix.utilities;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.Map;
+
 /**
  * Created by munix on 24/03/16.
  */
@@ -25,6 +27,29 @@ public class Preferences {
     public static Boolean deleteSharedPreference( Context context, String key ) {
         try {
             return getSharedPreferenceManager( context ).edit().remove( key ).commit();
+        } catch ( Exception e ) {
+        }
+        return false;
+    }
+
+    /**
+     * Elimina todas las Shared Preferences que empiecen con keyStartWith
+     *
+     * @param context
+     * @param keyStartWith
+     * @return
+     */
+    public static Boolean deleteSharedPreferenceByPartialKey( Context context, String keyStartWith ) {
+        try {
+            SharedPreferences settings = getSharedPreferenceManager( context );
+            Map<String,?> keys = settings.getAll();
+            SharedPreferences.Editor editor = settings.edit();
+            for ( Map.Entry<String,?> entry : keys.entrySet() ) {
+                if ( entry.getKey().startsWith( keyStartWith ) ) {
+                    editor.remove( entry.getKey() );
+                }
+            }
+            return editor.commit();
         } catch ( Exception e ) {
         }
         return false;
