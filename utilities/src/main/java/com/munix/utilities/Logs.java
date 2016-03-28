@@ -24,6 +24,38 @@ public class Logs {
     }
 
     /**
+     * Log debug extendido
+     *
+     * @param tag
+     * @param text
+     */
+    public static void debug( String tag, String text ) {
+        try {
+            Log.d( tag, getFormattedLogLine() + text );
+        } catch ( OutOfMemoryError error ) {
+            error.printStackTrace();
+        } catch ( Exception exception ) {
+            exception.printStackTrace();
+        }
+    }
+
+    /**
+     * Log info extendido
+     *
+     * @param tag
+     * @param text
+     */
+    public static void info( String tag, String text ) {
+        try {
+            Log.i( tag, getFormattedLogLine() + text );
+        } catch ( OutOfMemoryError error ) {
+            error.printStackTrace();
+        } catch ( Exception exception ) {
+            exception.printStackTrace();
+        }
+    }
+
+    /**
      * Log warn extendido
      *
      * @param tag
