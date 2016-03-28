@@ -4,11 +4,40 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by munix on 1/03/16.
  */
 public class Strings {
+
+
+    /**
+     * Comprueba si un string tiene formato válido de email
+     *
+     * @param email
+     * @return
+     */
+    public static boolean isValidEmail( String email ) {
+        Pattern emailPattern = Pattern.compile( ".+@.+\\.[a-z]+" );
+        Matcher m = emailPattern.matcher( email );
+        return m.matches();
+    }
+
+    /**
+     * Pone en mayúsculas el primer caracter de la cadena
+     *
+     * @param text
+     * @return
+     */
+    public static String ucfirst( String text ) {
+        if ( text.substring( 0, 1 ).equals( "¿" ) ) {
+            return text.substring( 0, 1 ) + text.substring( 1, 2 ).toUpperCase() + text.substring( 2 ).toLowerCase();
+        } else {
+            return text.substring( 0, 1 ).toUpperCase() + text.substring( 1 ).toLowerCase();
+        }
+    }
 
     /**
      * Une un array list de strings en un único string mediante un separador
