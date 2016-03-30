@@ -27,3 +27,12 @@ Step 2. Add the dependency to your project build.gradle
     }
    
    
+   
+How do I solve peer not authenticated error in Gradle?
+===
+
+If you are running Gradle on Linux you might get the peer not authenticated error. 
+Edit your gradle/wrapper/gradle-wrapper.properties and set distributionUrl to https\://services.gradle.org/distributions/gradle-2.11-all.zip
+
+Ex: distributionUrl=https\://services.gradle.org/distributions/gradle-2.11-all.zip
+   
