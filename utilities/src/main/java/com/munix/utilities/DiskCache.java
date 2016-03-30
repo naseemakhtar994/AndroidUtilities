@@ -34,6 +34,9 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
+/**
+ * Created by munix on 30/03/16.
+ */
 public class DiskCache {
 
     public static final int TIME_MINUTE = 60;
