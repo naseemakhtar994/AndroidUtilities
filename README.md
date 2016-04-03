@@ -23,7 +23,7 @@ Step 2. Add the dependency to your project build.gradle
 
 
     dependencies {
-        compile 'com.github.munix:AndroidUtilities:v1.2'
+        compile 'com.github.munix:AndroidUtilities:v1.3'
     }
    
    
