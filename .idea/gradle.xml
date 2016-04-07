@@ -8,14 +8,14 @@
         <option name="gradleJvm" value="1.7" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/utilities" />
+            <option value="/media/munix/Glacier/GitRepo/MunixAndroidUtilities" />
+            <option value="/media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities" />
           </set>
         </option>
         <option name="myModules">
           <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/utilities" />
+            <option value="/media/munix/Glacier/GitRepo/MunixAndroidUtilities" />
+            <option value="/media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities" />
           </set>
         </option>
       </GradleProjectSettings>
