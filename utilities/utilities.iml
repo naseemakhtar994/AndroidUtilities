@@ -62,13 +62,6 @@
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/main/java" isTestSource="false" />
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/main/jni" isTestSource="false" />
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/main/rs" isTestSource="false" />
-      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/res" type="java-test-resource" />
-      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/resources" type="java-test-resource" />
-      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/assets" type="java-test-resource" />
-      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/aidl" isTestSource="true" />
-      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/java" isTestSource="true" />
-      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/jni" isTestSource="true" />
-      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/rs" isTestSource="true" />
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/androidTest/res" type="java-test-resource" />
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/androidTest/resources" type="java-test-resource" />
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/androidTest/assets" type="java-test-resource" />
@@ -76,6 +69,13 @@
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/androidTest/jni" isTestSource="true" />
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/androidTest/rs" isTestSource="true" />
+      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/res" type="java-test-resource" />
+      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/assets" type="java-test-resource" />
+      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/aidl" isTestSource="true" />
+      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/java" isTestSource="true" />
+      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/jni" isTestSource="true" />
+      <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/test/rs" isTestSource="true" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/assets" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/blame" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/bundles" />

@@ -35,7 +35,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * Created by munix on 30/03/16.
+ * Created by munix on 07/04/16.
  */
 public class DiskCache {
 
@@ -111,6 +111,12 @@ public class DiskCache {
 
     private static String myPid() {
         return "_" + android.os.Process.myPid();
+    }
+
+
+    public Boolean exists( String key ) {
+        File file = mCache.get( key );
+        return file.exists();
     }
 
     public void put( String key, String value ) {
