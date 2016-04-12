@@ -2,11 +2,13 @@ package com.munix.utilities;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Scanner;
 
 /**
- * Created by munix on 18/03/16.
+ * Created by munix on 07/04/16.
  */
 public class Files {
 
@@ -57,5 +59,27 @@ public class Files {
         }
         is.close();
         return bytes;
+    }
+
+    /**
+     * Lee un archivo y devuelve el contenido como String
+     * @param path
+     * @return
+     * @throws FileNotFoundException
+     */
+    public static String readFileAsString( String path ) throws FileNotFoundException {
+        File file = new File( path );
+        StringBuilder fileContents = new StringBuilder( (int) file.length() );
+        Scanner scanner = new Scanner( file );
+        String lineSeparator = java.lang.System.getProperty( "line.separator" );
+
+        try {
+            while ( scanner.hasNextLine() ) {
+                fileContents.append( scanner.nextLine() + lineSeparator );
+            }
+            return fileContents.toString();
+        } finally {
+            scanner.close();
+        }
     }
 }

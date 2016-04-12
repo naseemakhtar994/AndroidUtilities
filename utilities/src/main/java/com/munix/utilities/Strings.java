@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by munix on 1/03/16.
+ * Created by munix on 07/04/16.
  */
 public class Strings {
 

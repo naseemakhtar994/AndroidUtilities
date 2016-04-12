@@ -5,7 +5,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
 /**
- * Created by munix on 2/03/16.
+ * Created by munix on 07/04/16.
  */
 public class System {
 

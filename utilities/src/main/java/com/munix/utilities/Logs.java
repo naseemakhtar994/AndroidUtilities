@@ -3,7 +3,7 @@ package com.munix.utilities;
 import android.util.Log;
 
 /**
- * Created by munix on 1/03/16.
+ * Created by munix on 07/04/16.
  */
 public class Logs {
 

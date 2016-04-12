@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 
 /**
- * Created by munix on 18/03/16.
+ * Created by munix on 07/04/16.
  */
 public class Connection {
 

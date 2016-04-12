@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import java.util.Map;
 
 /**
- * Created by munix on 24/03/16.
+ * Created by munix on 07/04/16.
  */
 public class Preferences {
 
