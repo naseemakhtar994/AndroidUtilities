@@ -432,6 +432,34 @@ public class Files {
         }
     }
 
+    /**
+     * Mueve un archivo a un directorio
+     * @param srcFile
+     * @param destDir
+     * @param createDestDir
+     * @throws IOException
+     */
+    public static void moveFileToDirectory(File srcFile, File destDir, boolean createDestDir) throws IOException {
+        if(srcFile == null) {
+            throw new NullPointerException("Source must not be null");
+        } else if(destDir == null) {
+            throw new NullPointerException("Destination directory must not be null");
+        } else {
+            if(!destDir.exists() && createDestDir) {
+                destDir.mkdirs();
+            }
+
+            if(!destDir.exists()) {
+                throw new FileNotFoundException("Destination directory \'" + destDir + "\' does not exist [createDestDir=" + createDestDir + "]");
+            } else if(!destDir.isDirectory()) {
+                throw new IOException("Destination \'" + destDir + "\' is not a directory");
+            } else {
+                moveFile(srcFile, new File(destDir, srcFile.getName()));
+            }
+        }
+    }
+
+
     /////////////////////////////////7
     // Private methods
     private static void doCopyDirectory( File srcDir, File destDir, FileFilter filter, boolean preserveFileDate, List<String> exclusionList ) throws IOException {
