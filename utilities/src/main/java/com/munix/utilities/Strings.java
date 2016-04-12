@@ -1,5 +1,7 @@
 package com.munix.utilities;
 
+import android.text.TextUtils;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -289,5 +291,78 @@ public class Strings {
         }
 
         return in;
+    }
+
+    /**
+     * Devuelve un String envuelto por otro. Ej: substringBetween("*Hola*","*") => Hola
+     * @param str
+     * @param tag
+     * @return
+     */
+    public static String substringBetween(String str, String tag) {
+        return substringBetween(str, tag, tag);
+    }
+
+    /**
+     * Devuelve un string contenido entre dos cadenas (open y close)
+     * @param str
+     * @param open
+     * @param close
+     * @return
+     */
+    public static String substringBetween(String str, String open, String close) {
+        if(str != null && open != null && close != null) {
+            int start = str.indexOf(open);
+            if(start != -1) {
+                int end = str.indexOf(close, start + open.length());
+                if(end != -1) {
+                    return str.substring(start + open.length(), end);
+                }
+            }
+
+            return null;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * Devuelve todas las coincidencias de strings envueltos por open y close
+     * @param str
+     * @param open
+     * @param close
+     * @return
+     */
+    public static String[] substringsBetween(String str, String open, String close) {
+        if(str != null && !TextUtils.isEmpty(open) && !TextUtils.isEmpty(close)) {
+            int strLen = str.length();
+            if(strLen == 0) {
+                return new String[]{};
+            } else {
+                int closeLen = close.length();
+                int openLen = open.length();
+                ArrayList list = new ArrayList();
+
+                int end;
+                for(int pos = 0; pos < strLen - closeLen; pos = end + closeLen) {
+                    int start = str.indexOf(open, pos);
+                    if(start < 0) {
+                        break;
+                    }
+
+                    start += openLen;
+                    end = str.indexOf(close, start);
+                    if(end < 0) {
+                        break;
+                    }
+
+                    list.add(str.substring(start, end));
+                }
+
+                return list.isEmpty()?null:(String[])list.toArray(new String[list.size()]);
+            }
+        } else {
+            return null;
+        }
     }
 }

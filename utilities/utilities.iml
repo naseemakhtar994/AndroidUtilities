@@ -66,21 +66,15 @@
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/androidTest/jni" isTestSource="true" />
       <sourceFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/src/androidTest/rs" isTestSource="true" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/assets" />
-      <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/blame" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/bundles" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/classes" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/dependency-cache" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/incremental" />
-      <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/jniLibs" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/lint" />
-      <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/mockable-android-23.jar" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/res" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/rs" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/symbols" />
-      <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/intermediates/transforms" />
-      <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/libs" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/outputs" />
-      <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/poms" />
       <excludeFolder url="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/build/tmp" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
