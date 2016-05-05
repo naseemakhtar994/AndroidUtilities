@@ -50,11 +50,15 @@ public class Strings {
      */
     public static String implode( ArrayList<String> myList, String separator ) {
         String newString = "";
-        for ( Iterator<String> it = myList.iterator(); it.hasNext(); ) {
-            newString += it.next();
-            if ( it.hasNext() ) {
-                newString += separator;
+        if ( myList.size() > 0 ) {
+            for ( Iterator<String> it = myList.iterator(); it.hasNext(); ) {
+                newString += it.next();
+                if ( it.hasNext() ) {
+                    newString += separator;
+                }
             }
+        }else if ( myList.size() == 1 ){
+            return myList.get( 0 );
         }
         return newString;
     }
@@ -69,11 +73,15 @@ public class Strings {
     public static String implode( String[] myList, String separator ) {
         String newString = "";
 
-        for ( int i = 0; i <= myList.length; i++ ) {
-            newString += myList[i];
-            if ( i < myList.length ) {
-                newString += separator;
+        if ( myList.length > 1 ) {
+            for ( int i = 0; i <= myList.length; i++ ) {
+                newString += myList[i];
+                if ( i < myList.length ) {
+                    newString += separator;
+                }
             }
+        }else if ( myList.length == 1 ){
+            return myList[0];
         }
         return newString;
     }
