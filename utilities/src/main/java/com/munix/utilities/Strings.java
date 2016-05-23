@@ -74,7 +74,7 @@ public class Strings {
         String newString = "";
 
         if ( myList.length > 1 ) {
-            for ( int i = 0; i <= myList.length; i++ ) {
+            for ( int i = 0; i < myList.length; i++ ) {
                 newString += myList[i];
                 if ( i < myList.length ) {
                     newString += separator;
