@@ -35,7 +35,8 @@ public class Strings {
      */
     public static String ucfirst( String text ) {
         if ( text.substring( 0, 1 ).equals( "¿" ) ) {
-            return text.substring( 0, 1 ) + text.substring( 1, 2 ).toUpperCase() + text.substring( 2 ).toLowerCase();
+            return text.substring( 0, 1 ) + text.substring( 1, 2 )
+                    .toUpperCase() + text.substring( 2 ).toLowerCase();
         } else {
             return text.substring( 0, 1 ).toUpperCase() + text.substring( 1 ).toLowerCase();
         }
@@ -57,7 +58,7 @@ public class Strings {
                     newString += separator;
                 }
             }
-        }else if ( myList.size() == 1 ){
+        } else if ( myList.size() == 1 ) {
             return myList.get( 0 );
         }
         return newString;
@@ -77,11 +78,11 @@ public class Strings {
 
             for ( int i = 0; i < myList.length; i++ ) {
                 newString += myList[i];
-                if ( i < myList.length ) {
+                if ( i < ( myList.length - 1 ) ) {
                     newString += separator;
                 }
             }
-        }else if ( myList.length == 1 ){
+        } else if ( myList.length == 1 ) {
             return myList[0];
         }
         return newString;
@@ -304,28 +305,30 @@ public class Strings {
 
     /**
      * Devuelve un String envuelto por otro. Ej: substringBetween("*Hola*","*") => Hola
+     *
      * @param str
      * @param tag
      * @return
      */
-    public static String substringBetween(String str, String tag) {
-        return substringBetween(str, tag, tag);
+    public static String substringBetween( String str, String tag ) {
+        return substringBetween( str, tag, tag );
     }
 
     /**
      * Devuelve un string contenido entre dos cadenas (open y close)
+     *
      * @param str
      * @param open
      * @param close
      * @return
      */
-    public static String substringBetween(String str, String open, String close) {
-        if(str != null && open != null && close != null) {
-            int start = str.indexOf(open);
-            if(start != -1) {
-                int end = str.indexOf(close, start + open.length());
-                if(end != -1) {
-                    return str.substring(start + open.length(), end);
+    public static String substringBetween( String str, String open, String close ) {
+        if ( str != null && open != null && close != null ) {
+            int start = str.indexOf( open );
+            if ( start != -1 ) {
+                int end = str.indexOf( close, start + open.length() );
+                if ( end != -1 ) {
+                    return str.substring( start + open.length(), end );
                 }
             }
 
@@ -337,15 +340,16 @@ public class Strings {
 
     /**
      * Devuelve todas las coincidencias de strings envueltos por open y close
+     *
      * @param str
      * @param open
      * @param close
      * @return
      */
-    public static String[] substringsBetween(String str, String open, String close) {
-        if(str != null && !TextUtils.isEmpty(open) && !TextUtils.isEmpty(close)) {
+    public static String[] substringsBetween( String str, String open, String close ) {
+        if ( str != null && !TextUtils.isEmpty( open ) && !TextUtils.isEmpty( close ) ) {
             int strLen = str.length();
-            if(strLen == 0) {
+            if ( strLen == 0 ) {
                 return new String[]{};
             } else {
                 int closeLen = close.length();
@@ -353,22 +357,22 @@ public class Strings {
                 ArrayList list = new ArrayList();
 
                 int end;
-                for(int pos = 0; pos < strLen - closeLen; pos = end + closeLen) {
-                    int start = str.indexOf(open, pos);
-                    if(start < 0) {
+                for ( int pos = 0; pos < strLen - closeLen; pos = end + closeLen ) {
+                    int start = str.indexOf( open, pos );
+                    if ( start < 0 ) {
                         break;
                     }
 
                     start += openLen;
-                    end = str.indexOf(close, start);
-                    if(end < 0) {
+                    end = str.indexOf( close, start );
+                    if ( end < 0 ) {
                         break;
                     }
 
-                    list.add(str.substring(start, end));
+                    list.add( str.substring( start, end ) );
                 }
 
-                return list.isEmpty()?null:(String[])list.toArray(new String[list.size()]);
+                return list.isEmpty() ? null : (String[]) list.toArray( new String[list.size()] );
             }
         } else {
             return null;
