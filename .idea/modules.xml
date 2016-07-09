@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/MunixAndroidUtilities.iml" filepath="/media/munix/Glacier/GitRepo/MunixAndroidUtilities/MunixAndroidUtilities.iml" />
-      <module fileurl="file:///media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/utilities.iml" filepath="/media/munix/Glacier/GitRepo/MunixAndroidUtilities/utilities/utilities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MunixAndroidUtilities.iml" filepath="$PROJECT_DIR$/MunixAndroidUtilities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utilities/utilities.iml" filepath="$PROJECT_DIR$/utilities/utilities.iml" />
     </modules>
   </component>
 </project>

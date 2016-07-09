@@ -72,7 +72,8 @@ public class DiskCache {
      * @return
      */
     public static DiskCache get( Context ctx, String cacheName ) {
-        File f = new File( ctx.getFilesDir(), cacheName );
+        File f = ctx.getDir( cacheName, Context.MODE_PRIVATE ); // new File( ctx.getFilesDir(),  );
+        Logs.verbose( "DiskCache", f.getAbsolutePath() );
         return get( f, MAX_SIZE, MAX_COUNT );
     }
 
