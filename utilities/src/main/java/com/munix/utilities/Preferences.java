@@ -24,12 +24,11 @@ public class Preferences {
      * @param context
      * @param key
      */
-    public static Boolean deleteSharedPreference( Context context, String key ) {
+    public static void deleteSharedPreference( Context context, String key ) {
         try {
-            return getSharedPreferenceManager( context ).edit().remove( key ).commit();
+            getSharedPreferenceManager( context ).edit().remove( key ).apply();
         } catch ( Exception e ) {
         }
-        return false;
     }
 
     /**
@@ -39,7 +38,7 @@ public class Preferences {
      * @param keyStartWith
      * @return
      */
-    public static Boolean deleteSharedPreferenceByPartialKey( Context context, String keyStartWith ) {
+    public static void deleteSharedPreferenceByPartialKey( Context context, String keyStartWith ) {
         try {
             SharedPreferences settings = getSharedPreferenceManager( context );
             Map<String,?> keys = settings.getAll();
@@ -49,10 +48,10 @@ public class Preferences {
                     editor.remove( entry.getKey() );
                 }
             }
-            return editor.commit();
+            editor.apply();
         } catch ( Exception e ) {
         }
-        return false;
+
     }
 
     /**
@@ -62,15 +61,14 @@ public class Preferences {
      * @param key
      * @param value
      */
-    public static Boolean writeSharedPreference( Context context, String key, String value ) {
+    public static void writeSharedPreference( Context context, String key, String value ) {
         try {
             SharedPreferences settings = getSharedPreferenceManager( context );
             SharedPreferences.Editor editor = settings.edit();
             editor.putString( key, value );
-            return editor.commit();
+            editor.apply();
         } catch ( Exception e ) {
         }
-        return false;
     }
 
     /**
@@ -80,15 +78,14 @@ public class Preferences {
      * @param key
      * @param value
      */
-    public static Boolean writeSharedPreference( Context context, String key, Boolean value ) {
+    public static void writeSharedPreference( Context context, String key, Boolean value ) {
         try {
             SharedPreferences settings = getSharedPreferenceManager( context );
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean( key, value );
-            return editor.commit();
+            editor.apply();
         } catch ( Exception e ) {
         }
-        return false;
     }
 
     /**
@@ -98,15 +95,14 @@ public class Preferences {
      * @param key
      * @param value
      */
-    public static Boolean writeSharedPreference( Context context, String key, long value ) {
+    public static void writeSharedPreference( Context context, String key, long value ) {
         try {
             SharedPreferences settings = getSharedPreferenceManager( context );
             SharedPreferences.Editor editor = settings.edit();
             editor.putLong( key, value );
-            return editor.commit();
+            editor.apply();
         } catch ( Exception e ) {
         }
-        return false;
     }
 
     /**
